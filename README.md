@@ -37,6 +37,40 @@ The system enhances the face recognition pipeline with edge-based validation usi
 * **Browser-Based with Zero Backend**
   Runs fully on client side using HTML, JavaScript, p5.js, and GLSL shaders.
 
+----
+
+## Algorithms and Design Choices
+**1. Face Detection**
+* **SSD Mobilenet V1**
+ High accuracy and robustness to varied lighting and angles. Chosen over Viola–Jones due to better generalization across modern datasets.
+
+* **Tiny Face Detector**
+ Optimized for low-latency performance. Used on devices with limited compute at a slight cost to accuracy.
+ Trade-off: SSD offers higher precision; Tiny Face Detector improves speed for resource-limited contexts.
+
+**2. Face Recognition**
+
+* Uses 128-dimensional embeddings generated via CNNs.
+
+* Recognition performed by comparing Euclidean distance between embeddings.
+
+* Threshold tuning balances false acceptance rate (FAR) vs. false rejection rate (FRR).
+
+**3. Anti-Spoofing**
+
+* Sobel operator computes intensity gradients to detect depth cues.
+
+* Rejects flat 2D images lacking sufficient texture contrast.
+
+* Trade-off: Computationally lightweight but less robust against advanced 3D masks.
+
+**4. Graphics Integration**
+
+* GLSL shaders render a rotating sphere for successful login, emphasizing GPU acceleration through WebGL.
+
+* p5.js handles 2D effects like celebratory fireworks.
+
+Trade-off: Shader effects are resource-intensive but showcase seamless GPU-accelerated feedback.
 ---
 
 ## Tech Stack
@@ -147,6 +181,6 @@ This project is licensed under the **MIT License**.
 
 * [face-api.js](https://github.com/justadudewhohacks/face-api.js)
 * [p5.js](https://p5js.org/)
-* GLSL shader inspirations from The Book of Shaders
+* [The Book of Shaders](https://thebookofshaders.com/)
 * Fonts from Google Fonts
 
