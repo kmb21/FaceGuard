@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+        button {
+            width: 200px; 
+            height: 50px; 
+            font-size: 16px; 
+            margin: 10px;
+            cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+
+    <button id = "signUp"> Sign Up</button>
+    <button id = "logIn"> Log In</button>
+        
+    <script>
+        function changePageToLogin(){
+            window.location.href = 'logger.html';
+        }
+        function changePageToSignup(){
+            window.location.href = 'signup.html';
+        }
+        let button_logIn = document.querySelector("#logIn");
+        let button_signUp = document.querySelector("#signUp")
+        
+        button_logIn.addEventListener("click",changePageToLogin);
+        button_signUp.addEventListener("click",changePageToSignup);
+
+
+
+    </script>
+</body>
+</html>
