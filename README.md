@@ -127,7 +127,7 @@ You can download them from [face-api.js model repository](https://github.com/jus
 
 ---
 
-## 🤝 Contribution Guide
+##Contribution Guide
 
 1. Fork the repo
 2. Create a new branch: `feature/my-feature`
@@ -137,13 +137,13 @@ You can download them from [face-api.js model repository](https://github.com/jus
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License**.
 
 ---
 
-## 🙌 Acknowledgments
+## Acknowledgments
 
 * [face-api.js](https://github.com/justadudewhohacks/face-api.js)
 * [p5.js](https://p5js.org/)
